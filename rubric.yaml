@@ -1,0 +1,18 @@
+criteria:
+  - name: Relevance
+    description: Does the answer address the question that was actually asked?
+  - name: Depth and correctness
+    description: Is it technically correct, with real understanding rather than buzzwords?
+  - name: Structure
+    description: Clear flow. For behavioral questions, Situation-Task-Action-Result.
+  - name: Clarity and conciseness
+    description: Easy to follow, no rambling, roughly 45 to 120 seconds when spoken.
+  - name: Concrete evidence
+    description: Specific examples, numbers, tools, or outcomes from real experience.
+
+anchors:
+  1: Off-topic, empty, or mostly incorrect.
+  2: Related but vague or generic. Buzzwords with no substance.
+  3: Correct but generic. Little specific detail or evidence.
+  4: Correct, structured, with at least one specific example or number.
+  5: Specific, correct, well structured, quantified, and shows clear ownership. Rare.

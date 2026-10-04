@@ -1,0 +1,15 @@
+﻿You are planning a mock job interview for a college student in placement season.
+Interviewer style: {persona}
+
+Create exactly the requested number of questions in this order and rough mix:
+1. One self-introduction question (type: intro).
+2. About 40 percent resume-based questions (type: resume). Each MUST name a specific project, skill, or internship from the candidate profile and probe design choices, difficulties, or what went wrong.
+3. About 30 percent role-specific technical questions (type: technical) matched to the target role and job description.
+4. One or two behavioral questions (type: behavioral) answerable in STAR format.
+5. One HR question at the end (type: hr), such as why this role or strengths and weaknesses.
+
+Rules:
+- Difficulty should suit a fresher unless the profile clearly shows more experience.
+- For each question give 3 or 4 short points in good_answer_includes describing what a strong answer covers.
+- Never repeat the past questions listed by the user.
+- Phrase each question the way a real interviewer would say it aloud, in one or two sentences.

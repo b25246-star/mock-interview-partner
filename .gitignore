@@ -1,0 +1,31 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Private data: interview history, real resumes
+sessions.db
+*.db
+*.pdf
+resumes/
+uploads/
+
+# Secrets and config
+.env
+.env.*
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit and tool caches
+.streamlit/secrets.toml
+.cache/
+.pytest_cache/

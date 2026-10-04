@@ -1,0 +1,7 @@
+streamlit>=1.40
+ollama>=0.4
+pdfplumber
+pydantic>=2
+pyyaml
+# Optional, only for voice answers:
+# faster-whisper
