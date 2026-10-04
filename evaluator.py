@@ -4,7 +4,7 @@ from pathlib import Path
 import yaml
 
 from llm import chat_json, load_prompt
-from models import Evaluation, Report
+from models import Evaluation, Report, SampleAnswer
 
 FILLERS = ["um", "uh", "like", "basically", "actually", "you know", "kind of", "sort of", "literally"]
 
@@ -32,10 +32,19 @@ def evaluate_answer(profile, question: str, good_points: list[str], answer: str)
         f"QUESTION: {question}\n"
         f"A GOOD ANSWER INCLUDES: {'; '.join(good_points) or 'n/a'}\n\n"
         f"CANDIDATE ANSWER: {answer or '(no answer)'}\n\n"
-        f"CANDIDATE PROFILE (the only facts you may use in the sample answer):\n"
-        f"{profile.model_dump_json(indent=2)}"
+        f"CANDIDATE PROFILE:\n{profile.model_dump_json(indent=2)}"
     )
     return chat_json(system, user, Evaluation)
+
+
+def make_sample_answer(profile, question: str, good_points: list[str], answer: str) -> str:
+    user = (
+        f"QUESTION: {question}\n"
+        f"A GOOD ANSWER INCLUDES: {'; '.join(good_points) or 'n/a'}\n"
+        f"WHAT THE CANDIDATE SAID: {answer or '(no answer)'}\n\n"
+        f"CANDIDATE PROFILE:\n{profile.model_dump_json(indent=2)}"
+    )
+    return chat_json(load_prompt("sample.txt"), user, SampleAnswer).sample_answer
 
 
 def final_report(profile, role: str, turns: list[dict]) -> Report:

@@ -37,6 +37,10 @@ class Evaluation(BaseModel):
     score: int = Field(ge=1, le=5)
     done_well: str
     to_fix: str
+    sample_answer: str = ""
+
+
+class SampleAnswer(BaseModel):
     sample_answer: str
 
 

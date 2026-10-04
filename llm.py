@@ -5,7 +5,7 @@ from pathlib import Path
 import ollama
 from pydantic import ValidationError
 
-MODEL = os.getenv("MODEL", "llama3.2:3b")
+MODEL = os.getenv("MODEL", "llama3.2:3b")  # the app's sidebar can change this at runtime
 PROMPT_DIR = Path(__file__).parent / "prompts"
 
 
